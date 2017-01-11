@@ -1,0 +1,60 @@
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default" *ngFor="let review of reviews; let idx = index">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#{{idx}}" (click)="onSelectReview(review)">
+              <b>{{review.CreatorInfo}}: </b>{{review.Summary}}
+              <b class="col-sm-3 pull-right">
+                <b class="col-sm-7">{{review.CreatedDateTime}}</b>
+                <b [style.color]="getStyle(review.ReviewStatus)" class="col-sm-5">{{review.ReviewStatus}}</b>
+              </b>
+          </a>
+        </h4>
+    </div>
+    <div id="{{idx}}" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div>Preview: <a class="hyperlink panel-title" target="_blank" href={{selectedReview.PreviewLink}}>{{review.PreviewLink}}</a>
+          <span class="pull-right">
+            <button md-button *ngIf="selectedReview.ReviewStatus=='In Progress'" (click)="onChangeReviewStatus('Submitted')">Submit</button>
+            <button md-button *ngIf="selectedReview.ReviewStatus=='In Progress'" (click)="onChangeReviewStatus('Declined')">Decline</button>
+            <label class="switch">
+              <input type="checkbox" (change)="onApproval($event)" [checked]="isApproved" [disabled]="approveDisabled">
+              <div class="slider round"></div>
+            </label>
+          </span>
+        </div>
+        <br>
+        <md-card *ngFor="let Comment of selectedReview.Comments| keys">
+          <md-card-title><b>{{Comment.value.UserInfo}}</b></md-card-title>
+          <md-card-content>{{Comment.value.Comment}}</md-card-content>
+          <md-card-actions>
+            <button md-button (click)="onEdit(Comment)">Edit</button>
+            {{Comment.value.DateTime}}
+          </md-card-actions>
+          <hr *ngIf="isEditClicked && Comment.key == selectedCommentId">
+          <md-card *ngIf="isEditClicked && Comment.key == selectedComment.key">
+            <md-card-title><b>{{userInfo}}</b></md-card-title>
+            <md-card-content>
+              <textarea [(ngModel)]="editedComment" class="form-control" rows="4"></textarea>
+            </md-card-content>
+            <md-card-actions>
+              <button md-button (click)="onSave()">Save</button>
+              <button md-button (click)="onCancel()">Cancel</button>
+            </md-card-actions>
+          </md-card>
+        </md-card>
+        <hr>
+        <md-card>
+          <md-card-title><b>Comment</b></md-card-title>
+          <md-card-content>
+            <textarea [(ngModel)]="newComment" class="form-control" rows="4"></textarea>
+          </md-card-content>
+          <md-card-actions>
+            <button md-button (click)="onComment()">Comment</button>
+            <button md-button (click)="onCancel()">Cancel</button>
+          </md-card-actions>
+        </md-card>
+      </div>
+    </div>
+  </div>
+</div>

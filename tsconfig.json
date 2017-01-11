@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "declaration": true,
+    "noImplicitAny": true
+  },
+  "files": [
+    "./index.ts",
+    "./src/index.ts",
+    "./src/review.component.ts",
+    "./src/review.service.ts",
+    "./src/review.config.ts",
+    "./src/review.model.ts",
+    "./src/keys-pipe.component.ts",
+    "./src/review.module.ts",
+    "./typings/main.d.ts"
+  ]
+}

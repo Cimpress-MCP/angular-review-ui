@@ -1,0 +1,59 @@
+{
+  "name": "angular-review-ui",
+  "version": "1.0.0",
+  "description": "An Angular 2 Library that provides UI component for review",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "typings install && tsc"
+  },
+  "typings": "./index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://git@mcpstash.cimpress.net/scm/mmm/angular-review-ui.git"
+  },
+  "keywords": [
+    "Angular2",
+    "review"
+  ],
+  "author": "IntaglioSquad",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "2.2.4",
+    "@angular/compiler": "2.2.4",
+    "@angular/core": "2.2.4",
+    "@angular/forms": "2.2.4",
+    "@angular/platform-browser": "2.2.4",
+    "@angular/platform-browser-dynamic": "2.2.4",
+    "@angular/material": "^2.0.0-alpha.11-3",
+    "hammerjs": "^2.0.8",
+    "rxjs": "5.0.0-beta.12",
+    "@angular/http": "2.2.4"
+  },
+  "devDependencies": {
+    "@angular/common": "2.2.4",
+    "@angular/compiler": "2.2.4",
+    "@angular/core": "2.2.4",
+    "@angular/platform-browser": "2.2.4",
+    "@angular/platform-browser-dynamic": "2.2.4",
+    "@angular/material": "^2.0.0-alpha.11-3",
+    "@angular/http": "2.2.4",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.35.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^0.3.8",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-typescript-preprocessor": "0.0.21",
+    "phantomjs-prebuilt": "^2.1.7",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "^0.19.26",
+    "typings": "^0.8.1",
+    "zone.js": "^0.6.12",
+    "hammerjs": "^2.0.8",
+    "core-js": "^2.4.1",
+    "typescript": "^2.0.2",
+    "@angular/forms": "2.2.4"
+  }
+}
