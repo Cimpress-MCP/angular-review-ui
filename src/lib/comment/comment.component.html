@@ -1,0 +1,32 @@
+<div>
+  <md-card *ngFor="let comment of selectedReview.Comments | keys | sortByDate:'comment'">
+    <md-card-title><b>{{comment.value.UserInfo}}</b></md-card-title>
+    <md-card-content>{{comment.value.Comment}}</md-card-content>
+    <md-card-actions>
+      <button md-button (click)="onEdit(comment)">Edit</button>
+      {{comment.value.DateTime}}
+    </md-card-actions>
+    <hr *ngIf="isEditClicked && comment.key == selectedCommentId">
+    <md-card *ngIf="isEditClicked && comment.key == selectedComment.key">
+      <md-card-title><b>{{userInfo}}</b></md-card-title>
+      <md-card-content>
+        <textarea [(ngModel)]="editedComment" class="form-control" rows="4"></textarea>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button (click)="onSave()">Save</button>
+        <button md-button (click)="onCancel()">Cancel</button>
+      </md-card-actions>
+    </md-card>
+  </md-card>
+  <hr>
+  <md-card>
+    <md-card-title><b>Comment</b></md-card-title>
+    <md-card-content>
+      <textarea [(ngModel)]="newComment" class="form-control" rows="4"></textarea>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button (click)="onComment()">Comment</button>
+      <button md-button (click)="onCancel()">Cancel</button>
+    </md-card-actions>
+  </md-card>
+</div>

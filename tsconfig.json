@@ -17,7 +17,11 @@
     "./src/review.service.ts",
     "./src/review.config.ts",
     "./src/review.model.ts",
-    "./src/keys-pipe.component.ts",
+    "./src/pipes/keys-pipe.component.ts",
+    "./src/pipes/sort-by-date-pipe.component.ts",
+    "./src/lib/comment/comment.component.ts",
+    "./src/lib/review-list/review-list.component.ts",
+    "./src/lib/review-header/review-header.component.ts",
     "./src/review.module.ts",
     "./typings/main.d.ts"
   ]

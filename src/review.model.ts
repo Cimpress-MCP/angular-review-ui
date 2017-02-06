@@ -1,21 +1,22 @@
 export class ReviewModel {
   public ReviewId: string;
   public Summary: string;
-  public CreatorInfo: string;
+  public CreatedBy: string;
   public CreatedDateTime: string;
-  public SubmittedDateTime: string;
+  public UpdatedDateTime: string;
   public PreviewLink: string;
   public Type: string;
   public Method: string;
   public Approvals: string[];
   public ReviewStatus: string;
   public Comments: Object;
+
   constructor(review: any) {
     this.ReviewId = review.ReviewId;
     this.Summary = review.Summary;
-    this.CreatorInfo = review.CreatorInfo;
+    this.CreatedBy = review.CreatedBy;
     this.CreatedDateTime = review.CreatedDateTime;
-    this.SubmittedDateTime = review.SubmittedDateTime;
+    this.UpdatedDateTime = review.UpdatedDateTime;
     this.PreviewLink = review.PreviewLink;
     this.Type = review.Type;
     this.Method = review.Method;

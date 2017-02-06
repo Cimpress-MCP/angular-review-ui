@@ -1,0 +1,34 @@
+.btn.disabled{
+  background-color: #0e8a10;
+}
+.hyperlink {
+    color: blue;
+}
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.glyphicons-ok {
+    font-size: large;
+}
+.enabled{
+      color: #0e8a10;
+}
+.disabled{
+    color: #fff;
+}
+.glyphicons-remove {
+    color: #a94442;
+    font-size: large;
+}
+.panel-default {
+    margin: 4px;
+    border-radius: 5px;
+}
+.btn {
+    height: 35px;
+    color: #f0553a;
+  }
+  a {
+      color: black;
+  }

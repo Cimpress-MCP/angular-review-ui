@@ -1,0 +1,35 @@
+<review-header></review-header>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default" *ngFor="let review of reviews|sortByDate:'review'; let idx = index">
+    <div class="panel-heading">
+      <a data-toggle="collapse" data-parent="#accordion" href="#{{idx}}" (click)="onSelectReview(review)">
+        <h4 class="panel-title">
+          <b>{{review.CreatedBy}}</b>
+        <b class="col-sm-10 pull-right">
+          <p class="col-sm-7">{{review.Summary}}</p>
+            <b class="col-sm-2">{{review.CreatedDateTime}}</b>
+            <b class="col-sm-2">{{review.UpdatedDateTime}}</b>
+            <b class="col-sm-1"><span *ngIf="review.Approvals.length!=0" class="glyphicons glyphicons-ok center enabled" data-toggle="tooltip" [title]="review.Approvals">{{review.Approvals.length}}</span></b>
+          </b>
+        </h4>
+      </a>
+    </div>
+    <div id="{{idx}}" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div *ngIf="selectedReview.ReviewStatus=='In Progress'">Preview: <a class="hyperlink panel-title" target="_blank" href={{selectedReview.PreviewLink}}>{{review.PreviewLink}}</a>
+          <div class="pull-right">
+            <button *ngIf="isApproved" type="button" class="btn btn-default disabled" disabled><span class="glyphicons glyphicons-ok disabled"></span></button>
+            <button *ngIf="!isApproved" type="button" class="btn btn-default" (click)="onApproval()" data-toggle="tooltip" title="Approve"><span class="glyphicons glyphicons-ok enabled"></span></button>
+            <div class="btn-group">
+              <button type="button" class="btn" [disabled]="selectedReview.Approvals.length==0" (click)="onChangeReviewStatus('Submitted')"><b>Submit</b></button>
+              <button type="button" class="btn" (click)="onChangeReviewStatus('Declined')"><b>Decline</b></button>
+            </div>
+          </div>
+        </div>
+        <br>
+        <comments [selectedReview]="selectedReview" [userInfo]="userInfo" [url]="url" (updateSelectedReview)="updateSelectedReview($event)">
+        </comments>
+      </div>
+    </div>
+  </div>
+</div>

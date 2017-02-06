@@ -1,0 +1,8 @@
+.panel-default-header {
+    margin: 4px;
+    border-radius: 5px;
+    background-color: rgb(29, 31, 33);
+}
+.clickable {
+    cursor: pointer;
+}
